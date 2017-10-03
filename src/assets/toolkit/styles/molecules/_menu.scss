@@ -9,3 +9,132 @@ Author URI:		http://github.com/alberttamayo04
 Author:			Mark Tamayo
 ------------------------------------------------------------------
 */
+
+
+// base styles
+// ----
+.navigation {
+	$modules: default, points-and-status, enjoy-your-rewards, know-your-health, improve-your-health;
+	width: 100%;
+	display: table;
+	padding-left: 0;
+
+	a {
+		display: block;
+		position: relative;
+
+		&:after {
+			content : '';
+			bottom: 0;
+			position: absolute;
+			display: block;
+			height: 2px;
+			width: 100%;
+		}
+	}
+
+	li {
+		display: table-cell;
+		position: relative;
+		line-height: 45px;
+		@extend .align-center;
+
+		@media screen and (max-width: $mobile-landscape) {
+			display: block;
+		}
+
+		@each $module in $modules { 
+			&.#{$module} {
+				ul,
+				a:after {
+					@extend %#{$module}-bg;
+				}
+
+				li {
+					&:hover {
+						a {
+							@extend %#{$module}-color;
+						}
+					}
+
+					@media screen and (max-width: $mobile-landscape) {
+						a {
+							color: $component-active-color;
+						}
+					}
+				}
+			}
+		}
+
+		&.default {
+			&:first-child {
+				line-height: 51px;
+				width: 55px;
+				font-size: 20px;
+			}
+
+			ul {
+				min-width: 220px;
+			}
+		}
+
+		ul {
+			top: 48px;
+			position: absolute;
+			z-index: $zindex-navigation;
+			width: 100%;
+			display: none;
+
+			@media screen and (max-width: $mobile-landscape) {
+				display: block;
+				position: relative;
+				top: 0;
+			}
+
+			li {
+				line-height: 1!important;
+				display: block;
+				padding: 12px 15px;
+				@extend .align-left;
+
+				&:first-child {
+					font-size: $font-size-base;
+				}
+
+				&:hover {
+					background: $gray-lighter;
+				}
+
+				a:after {
+					display: none;
+				}
+			} 
+		}
+		
+		@each $module in $modules { 
+			&.#{$module} {
+				&:hover {
+					@extend %#{$module}-bg;
+
+					a {
+						color: #ffffff;
+					}
+
+					ul {
+						display: block;
+					}
+				}
+
+				@media screen and (max-width: $mobile-landscape) {
+					background: transparent!important;
+
+					&:hover {
+						& >a {
+							color: $gray-dark;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -30,13 +30,23 @@ Author:			Mark Tamayo
 	 Directional	@mixin gradient-directional
 	 Radial			@mixin gradient-radial
 
+# Link				@mixin vitality-link-variant
 # Opacity			@mixin opacity
 # Resizable			@mixin resizable
 # Scroolbar			@mixin scrollbar
 # Transform
-	 Rotate			@mixin 
-	 Scale			@mixin 
-	 Skew			@mixin 
+	rotate			@mixin vitality-transform-rotate
+	rotateX			@mixin vitality-transform-rotateX
+	rotateY			@mixin vitality-transform-rotateY
+	skew			@mixin vitality-transform-skew
+	skewX			@mixin vitality-transform-skewX
+	skewY			@mixin vitality-transform-skewY
+	scale			@mixin vitality-transform-scale
+	scaleX			@mixin vitality-transform-scaleX
+	scaleY			@mixin vitality-transform-scaleY
+	translate		@mixin vitality-transform-translate
+	translateX		@mixin vitality-transform-translateX
+	translateY		@mixin vitality-transform-translateY
 
 # Transition		@mixin transition-variant
 # User Select		@mixin user-select
@@ -206,6 +216,36 @@ Note: gulp-autoprefixer npm automatically adds vendor-prefix
 
 /*
 ------------------------------------------------------------------
+# Link
+------------------------------------------------------------------
+*/
+
+// vitality `.btn` variants(ex. primary, secondary, ...)
+// ----
+@mixin vitality-link-variant($color: $gray-light, $active-color: $brand-primary, $hover-color:  $brand-primary, $disabled: $gray-light, $decoration: $link-hover-decoration) {
+	a {
+		color: $color;
+
+		&:hover {
+			color: $hover-color;
+			text-decoration: $decoration!important;
+		}
+
+		&:active
+		&.active {
+			color: $active-color;
+		}
+
+		&.disabled {
+			color: $color;
+			cursor: $cursor-disabled;
+		}
+	}
+}
+
+
+/*
+------------------------------------------------------------------
 # Opacity
 ------------------------------------------------------------------
 */
@@ -259,12 +299,59 @@ Note: gulp-autoprefixer npm automatically adds vendor-prefix
 ------------------------------------------------------------------
 */
 
-// vitality `.btn` sizes
+// defines a 2D rotation
 // ----
-@mixin user-select($select) {
-	user-select: $select;
+@mixin vitality-transform-rotate($deg: 45deg) {
+	transform: rotate($deg);
 }
 
+// defines a 3D rotation along x-axis
+// ----
+@mixin vitality-transform-rotateX($x) {
+	transform: rotateX($x);
+}
+
+// defines a 3D rotation along y-axis
+// ----
+@mixin vitality-transform-rotateY($y) {
+	transform: rotateY($y);
+}
+
+// defines a 2D translation
+// ----
+@mixin vitality-transform-translate($x, $y) {
+	transform: translate($x, $y);
+}
+
+// defines a translation using only x-axis values
+// ----
+@mixin vitality-transform-translateX($x) {
+	transform: translateX($x);
+}
+
+// defines a translation using only y-axis values
+// ----
+@mixin vitality-transform-translateY($y) {
+	transform: translateY($y);
+}
+
+// defines a 2D transformation
+// ----
+@mixin vitality-transform-scale($x, $y) {
+	transform: scale($x, $y);
+}
+
+// defines a scale transformation using only x-axis values
+// ----
+@mixin vitality-transform-scaleX($x) {
+	transform: scaleX($x);
+}
+
+// defines a scale transformation using only y-axis values
+// ----
+@mixin vitality-transform-scaleY($y) {
+	transform: scaleY($y);
+}
 
 /*
 ------------------------------------------------------------------

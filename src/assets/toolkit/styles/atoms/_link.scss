@@ -1,6 +1,6 @@
 /*
 ------------------------------------------------------------------
-[Breadcrumb]
+[Label]
 
 Application:	Vitality
 Version:		1.0.0
@@ -9,3 +9,8 @@ Author URI:		http://github.com/alberttamayo04
 Author:			Mark Tamayo
 ------------------------------------------------------------------
 */
+
+
+// base styles
+// ----
+@include vitality-link-variant;

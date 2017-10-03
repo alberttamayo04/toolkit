@@ -11,6 +11,8 @@ Author:			Mark Tamayo
 */
 
 
+// base styles
+// ----
 @for $i from 1 through 5 {
 	h#{$i} {
 		@extend %h#{$i};

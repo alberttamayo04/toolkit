@@ -20,7 +20,12 @@ form {
 		margin-left: 7px;
 		
 		&:first-of-type {
+			margin-top: 0;
 			margin-left: 0;
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
 		}	
 	}
 
@@ -42,7 +47,3 @@ form {
 		@include border-box;
 	}
 }
-
-
-
-

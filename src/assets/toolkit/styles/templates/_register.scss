@@ -19,36 +19,10 @@ Author:			Mark Tamayo
 	.registration-form {
 		@extend .login-form;
 
-		.container {
-			max-width: $tablet-portrait;
-
-			@media screen and (max-width: $mobile-landscape) {
-				max-width: 100%;
-			}
+		p {
+			margin: 15px 0 0!important;
 		}
 
-		a {
-			color: $brand-primary;
-		}
 
-		h1 {
-			margin-bottom: 0;
-			color: $brand-primary;
-			font-size: $font-size-h3;
-		}
-
-		h1,
-		form {
-			padding:  20px;
-			border: 1px solid darken($gray-lighter, 5%);
-		}
-
-		form {
-			border-top: none;
-
-			input:not([type=submit]) {
-				background: transparent;
-			}
-		}
 	}
 }

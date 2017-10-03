@@ -25,6 +25,14 @@ Author:			Mark Tamayo
 		outline: 0!important;
 	}
 
+	& + .btn {
+		margin-left: 7px;
+
+		@media screen and (max-width: $mobile-landscape) {
+			margin: 8px 0;
+		}
+	}
+
 	&:disabled,
 	&[class*=disabled] {
 		cursor: $cursor-disabled;

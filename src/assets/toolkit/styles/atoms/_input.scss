@@ -32,11 +32,14 @@ Author:			Mark Tamayo
 	@include box-shadow(none!important);
 	@include vitality-transition-variant;
 
-	& + .input-group-addon {
-		border-radius: 0!important;
-		color: $gray-dark;
-		background: $gray-lighter;
-	} 
+	&:disabled,
+	&[disabled] {
+		background: $input-bg-disabled;
+
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
 
 	&:focus {
 		border-color: $input-border-focus;
@@ -49,29 +52,29 @@ Author:			Mark Tamayo
 		}
 	}
 
-	&:disabled,
-	&[disabled] {
-		background: $input-bg-disabled;
-
-		&:hover {
-			cursor: not-allowed;
-		}
-	}
-
 	&::-webkit-input-placeholder { 
-	  color: $gray-light;
+		color: $gray-light;
 	}
 
 	&:-moz-placeholder, 
 	&::-moz-placeholder { 
-	  color: $gray-light;
-	  opacity: 1;
+		color: $gray-light;
+		opacity: 1;
 	}
 
 	&:-ms-input-placeholder, 
 	&::-ms-input-placeholder { 
-	  color: $gray-light;
+		color: $gray-light;
 	}
+}
+
+
+// `.input-group-addon` styles
+// ----
+.input-group-addon {
+	border-radius: 0!important;
+	color: $gray-dark;
+	background: $gray-lighter;
 }
 
 
@@ -81,13 +84,19 @@ Author:			Mark Tamayo
 	table {
 		th,
 		td {
-			width: $input-height-base + 8;
-			line-height: $input-height-base - 8;
+			width: $input-height-base + 9;
+			line-height: $input-height-base - 9;
 			font-size: $font-size-base - 1;
+		}
 
+		td {
 			&.active.day {
 				background: $brand-primary!important;
 				color: #ffffff;
+			}
+
+			&.old.day {
+				color: $gray-lighter!important;
 			}
 		}
 
@@ -99,7 +108,7 @@ Author:			Mark Tamayo
 			}
 
 			&.datepicker-switch {
-				font-size: $font-size-base + 1;
+				font-weight: 600;
 			}
 		}
 	}
@@ -108,7 +117,7 @@ Author:			Mark Tamayo
 
 // [type=checkbox]
 // [type=radio]
-// `.form-check-input` base styles
+// `.form-check-input` styles
 // ----
 @each $type in checkbox, radio {
 	[type="#{$type}"] {
@@ -124,7 +133,7 @@ Author:			Mark Tamayo
 		}
 
 		&:checked,
-		.checked {
+		&.checked {
 			@extend %#{$type}-checked;
 
 			&:hover {

@@ -14,21 +14,21 @@ Author:			Mark Tamayo
 // base styles
 // ----
 .spinner {
-	width: $spinner-width;
-	height: $spinner-height;
 	background: transparent url('../images/loader.gif') no-repeat center center;
+	height: $spinner-height;
+	width: $spinner-width;
 	@include box-shadow(0 0 2px rgba(0, 0, 0, 0.3));
 	@include border-radius($spinner-border-radius);
 }
 
 
-// base styles
+// `.articulated-spinner` styles
 // ----
 .articulated-spinner {
-	display: block;
 	width: $articulated-spinner-width - ($spinner-inner-padding * 2);
-	text-align: center;
 	padding: $spinner-inner-padding;
+	@extend .align-center;
+	display: block;
 	@include box-shadow(0 0 2px rgba(0, 0, 0, 0.3));
 	@include border-radius($spinner-border-radius);
 
@@ -47,4 +47,8 @@ Author:			Mark Tamayo
 		font-size: $font-size-base;
 		color: $gray-light;
 	}
+}
+
+.articulated-spinner-overlay {
+	display: none;
 }

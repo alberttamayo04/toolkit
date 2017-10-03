@@ -56,10 +56,9 @@
 	}
 
 	.f-menu__heading {
+		font-size: 1.25rem;
+		font-weight: 600;
 		padding-left: 1.5rem;
-		font-weight: 700;
-		font-size: 1.25rem; //.6875rem;
-		// text-transform: uppercase;
 
 		&:hover {
 			color: map-get($colors, normal);

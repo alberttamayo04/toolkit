@@ -24,35 +24,36 @@ Sturcture was designed using atomic design approach.
 
 // organisms
 // ----
-@import 'organisms/header';
 @import 'organisms/content';
 @import 'organisms/footer';
+@import 'organisms/header';
 
 
 // molecules
 // ----
+@import 'molecules/breadcrumb';
 @import 'molecules/form';
 @import 'molecules/menu';
 @import 'molecules/modal';
 @import 'molecules/panel';
 @import 'molecules/question-card';
+@import 'molecules/wizard';
 
 
 // atoms
 // ----
 @import 'atoms/alert';
-@import 'atoms/breadcrumb';
 @import 'atoms/button';
 @import 'atoms/heading';
 @import 'atoms/input';
 @import 'atoms/label';
+@import 'atoms/link';
 @import 'atoms/list';
 @import 'atoms/pagination';
 @import 'atoms/paragraph';
 @import 'atoms/spinner';
 @import 'atoms/table';
 @import 'atoms/tooltip';
-@import 'atoms/wizard';
 
 
 // templates

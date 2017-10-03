@@ -1,6 +1,6 @@
 /*
 ------------------------------------------------------------------
-[Panel]
+[Question Card]
 
 Application:	Vitality
 Version:		1.0.0
@@ -9,3 +9,36 @@ Author URI:		http://github.com/alberttamayo04
 Author:			Mark Tamayo
 ------------------------------------------------------------------
 */
+
+
+// base styles
+// ----
+.panel {
+	border: 1px solid $panel-border-color;
+	padding: $panel-inner-padding ($panel-inner-padding + 4)!important;
+
+	&-content {
+		padding: $panel-inner-padding 0!important
+	}
+
+	&-header {
+		border-bottom: 1px solid $panel-header-border-color;
+		font-size: $font-size-h3;
+		color: $brand-primary;
+		padding-bottom: 12px;
+	}
+
+	&-footer {
+		border-top: 1px solid $panel-footer-border-color;
+		color: $gray-dark;
+		background: transparent!important;
+		padding: 12px 0 0!important;
+
+		a {
+			color: $brand-primary;
+		}
+	}
+}
+
+
+

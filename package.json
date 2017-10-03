@@ -1,5 +1,5 @@
 {
-  "name": "fabricator",
+  "name": "vitality",
   "version": "1.2.2",
   "description": "A tool for building website UI toolkits",
   "homepage": "http://fbrctr.github.io/",
@@ -9,7 +9,7 @@
     "prestart": "npm install",
     "build": "npm install && gulp",
     "start": "gulp --dev",
-    "test": "npm run build"
+    "test": "npm run build && mocha test/index.js"
   },
   "keywords": [
     "toolkit",
@@ -19,7 +19,7 @@
     "patterns",
     "library"
   ],
-  "author": "Luke Askew",
+  "author": "Mark Tamayo",
   "licenses": "MIT",
   "repository": {
     "type": "git",
@@ -58,6 +58,7 @@
     "axios": "^0.16.2",
     "chai": "^4.1.2",
     "chai-fs": "^1.0.0",
+    "express": "^4.16.1",
     "mochai": "^0.2.5",
     "sinon": "^4.0.0"
   }

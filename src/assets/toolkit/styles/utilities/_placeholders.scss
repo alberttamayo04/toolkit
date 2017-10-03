@@ -17,9 +17,8 @@ Author:			Mark Tamayo
 # Headings
 # Radio
 # Checkbox
-# Scroll Bar
-
-------------------------------------------------------------------
+# Modules
+-----------------------------------------------------------------
 */
 
 
@@ -110,3 +109,51 @@ Author:			Mark Tamayo
 %checkbox-disabled-checked {
     background-position: ((-$checkbox-width) * 3) 0!important;
 }
+
+
+/*
+------------------------------------------------------------------
+# Module Colors
+------------------------------------------------------------------
+*/
+
+%points-and-status-bg {
+	background: $points-status;
+}
+
+%enjoy-your-rewards-bg {
+	background: $enjoy-rewards;
+}
+
+%know-your-health-bg {
+	background: $know-health;
+}
+
+%improve-your-health-bg {
+	background: $improve-health;
+}
+
+%default-bg {
+	@extend %points-and-status-bg;
+}
+
+%points-and-status-color {
+	color: $points-status;
+}
+
+%enjoy-your-rewards-color {
+	color: $enjoy-rewards;
+}
+
+%know-your-health-color {
+	color: $know-health;
+}
+
+%improve-your-health-color {
+	color: $improve-health;
+}
+
+%default-color {
+	@extend %points-and-status-color;
+}
+

@@ -23,11 +23,14 @@ Author:			Mark Tamayo
 # Buttons
 # Input
 # Spinner
+# Question Card
+# Panel
 # Modal
-# Alerts
+# Alert
 # Wizard
 ------------------------------------------------------------------
 */
+
 
 /*
 ------------------------------------------------------------------
@@ -118,7 +121,7 @@ $text-color:					$gray-dark !default;
 // ----
 $link-color:					#0000ee !default;
 $link-hover-color:				#551a8b !default;
-$link-hover-decoration:			underline !default;
+$link-hover-decoration:			none !default;
 
 
 /*
@@ -339,6 +342,22 @@ $input-addon-active-bg:			$component-active-bg !default;
 
 /*
 ------------------------------------------------------------------
+# z-index master list
+------------------------------------------------------------------
+*/
+
+// `.navigation` z-index
+// ----
+$zindex-navigation:				1000 !default;
+
+// `.modal.fade` z-index
+// ----
+$zindex-modal-background:		1040 !default;
+$zindex-modal:					1050 !default;
+
+
+/*
+------------------------------------------------------------------
 # Spinner
 ------------------------------------------------------------------
 */
@@ -364,6 +383,51 @@ $spinner-height:				120px !default;
 // ----
 $articulated-spinner-width:		300px !default;
 
+
+/*
+------------------------------------------------------------------
+# Question Card
+------------------------------------------------------------------
+*/
+
+// `.question-card` background color
+// ----
+$independent-qcard-bg:			#fafafa !default;
+$qcard-bg:						#ffffff !default;
+
+// `.question-name` textual styles
+// ----
+$qcard-title-color:				$gray-dark !default;
+
+// `.question-card` note textual styles
+// ----
+$qcard-note-color:				$gray-light !default;
+
+
+/*
+------------------------------------------------------------------
+# Panel
+------------------------------------------------------------------
+*/
+
+// `.panel` padding size
+// ----
+$panel-inner-padding:			20px !default;
+
+// `.panel` styles
+// ----
+$panel-bg:						#ffffff !default;
+$panel-border-color:			$gray-lighter;
+
+// `.panel-header` border color
+// ----
+$panel-header-border-color:		$brand-primary;
+
+// `.panel-footer` border color
+// ----
+$panel-footer-border-color:		$gray-lighter;
+
+
 /*
 ------------------------------------------------------------------
 # Modal
@@ -377,7 +441,7 @@ $modal-inner-padding:         15px !default;
 // `.modal` backdrop styles
 // ----
 $modal-backdrop-bg:           #000 !default;
-$modal-backdrop-opacity:      .5 !default;
+$modal-backdrop-opacity:      0.5 !default;
 
 // `.modal-content` styless
 // ----
@@ -395,7 +459,7 @@ $modal-footer-border-color:   $modal-header-border-color !default;
 
 /*
 ------------------------------------------------------------------
-# Alerts
+# Alert
 ------------------------------------------------------------------
 */
 
@@ -458,5 +522,5 @@ $wizard-active-item-bg:			$component-active-bg !default;
 
 // `.wizard-item` completed state
 // ----
-$wizard-done-item-color:		#ffffff !default;
-$wizard-done-item-bg:			lighten($component-active-bg, 10%) !default;
+$wizard-done-item-color:		$wizard-active-item-color !default;
+$wizard-done-item-bg:			$wizard-active-item-bg !default;

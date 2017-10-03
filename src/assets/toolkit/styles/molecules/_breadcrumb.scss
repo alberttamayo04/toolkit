@@ -1,0 +1,55 @@
+/*
+------------------------------------------------------------------
+[Breadcrumb]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+.breadcrumb {
+	background: transparent;
+	margin-left: 3px;
+	padding: 0;
+
+	&>li+li {
+		&:before {
+			content: '';
+			padding: 0;
+		}
+	}
+
+	li {
+		display: inline-block;
+		padding-right: 11px;
+
+		&:before {
+			display: inline-block;
+			position: relative;
+			margin: 0 11px 0 -2px;
+			top: -3px;
+			font-family: $font-family-fa;
+			font-size: 6px;
+			content: '\f111'!important;
+		}
+
+		a,
+		&:before {
+			color: $gray-light!important;
+		}
+
+		&.active {
+			a,
+			&:before {
+				color: $brand-primary!important
+			}
+		}
+	}
+
+}

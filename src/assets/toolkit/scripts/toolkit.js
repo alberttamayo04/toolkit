@@ -9,7 +9,7 @@
 $('.datepicker').datepicker({
 	autoclose: true,
 	container: '.date',
-	orientation: 'bottom left'
+	orientation: 'bottom left',
 });
 
 $('.main-question input[type="checkbox"]').on('change', function(e){
