@@ -1,0 +1,50 @@
+/*
+------------------------------------------------------------------
+[Spinner]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+.spinner {
+	width: $spinner-width;
+	height: $spinner-height;
+	background: transparent url('../images/loader.gif') no-repeat center center;
+	@include box-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+	@include border-radius($spinner-border-radius);
+}
+
+
+// base styles
+// ----
+.articulated-spinner {
+	display: block;
+	width: $articulated-spinner-width - ($spinner-inner-padding * 2);
+	text-align: center;
+	padding: $spinner-inner-padding;
+	@include box-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+	@include border-radius($spinner-border-radius);
+
+	.spinner {
+		margin: 0 auto;
+		@include box-shadow(none);
+		@include border-radius(0);
+	}
+
+	.status {
+		font-size: $font-size-h5;
+		font-weight: 600;
+	}
+
+	.message {
+		font-size: $font-size-base;
+		color: $gray-light;
+	}
+}

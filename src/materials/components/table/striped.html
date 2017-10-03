@@ -1,0 +1,20 @@
+<table class="table table-bordered table-striped">
+	<thead>
+		{{#each toolkit.thead}}
+			<tr>
+				{{#each this}}
+					<th>{{this}}</th>
+				{{/each}}
+			</tr>
+		{{/each}}
+	</thead>
+	<tbody>
+		{{#each toolkit.tbody}}
+			<tr>
+				{{#each this}}
+					<td>{{this}}</td>
+				{{/each}}
+			</tr>
+		{{/each}}
+	</tbody>
+</table>

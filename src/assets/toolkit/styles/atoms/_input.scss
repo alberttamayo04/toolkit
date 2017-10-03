@@ -1,0 +1,203 @@
+/*
+------------------------------------------------------------------
+[Input]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+// select
+// textarea
+// [type="text"]
+// [type="password"]
+// [type="datepicker"]
+// [type="email"]
+// [type="number"]
+// [type="range"]
+// [type="search"]
+// [type="submit"]
+// `.form-control` base styles
+// ----
+.form-control  {
+	color: $input-color;
+	border-color: $input-border;
+	height: $input-height-base + 8;
+	font-size: $font-size-base;
+	padding: 0 14px;
+	border-radius: 0!important;
+	@include box-shadow(none!important);
+	@include vitality-transition-variant;
+
+	& + .input-group-addon {
+		border-radius: 0!important;
+		color: $gray-dark;
+		background: $gray-lighter;
+	} 
+
+	&:focus {
+		border-color: $input-border-focus;
+		outline: 0!important;
+
+		& + .input-group-addon {
+			color: $input-addon-active-color;
+			background: $input-addon-active-bg;
+			border: none;
+		}
+	}
+
+	&:disabled,
+	&[disabled] {
+		background: $input-bg-disabled;
+
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
+
+	&::-webkit-input-placeholder { 
+	  color: $gray-light;
+	}
+
+	&:-moz-placeholder, 
+	&::-moz-placeholder { 
+	  color: $gray-light;
+	  opacity: 1;
+	}
+
+	&:-ms-input-placeholder, 
+	&::-ms-input-placeholder { 
+	  color: $gray-light;
+	}
+}
+
+
+// `.datepicker` styles
+// ----
+.datepicker {
+	table {
+		th,
+		td {
+			width: $input-height-base + 8;
+			line-height: $input-height-base - 8;
+			font-size: $font-size-base - 1;
+
+			&.active.day {
+				background: $brand-primary!important;
+				color: #ffffff;
+			}
+		}
+
+		th {
+			&.prev,
+			&.next {
+				font-size: $font-size-base + 7;
+				padding: 4px 5px 6px 5px;
+			}
+
+			&.datepicker-switch {
+				font-size: $font-size-base + 1;
+			}
+		}
+	}
+}
+
+
+// [type=checkbox]
+// [type=radio]
+// `.form-check-input` base styles
+// ----
+@each $type in checkbox, radio {
+	[type="#{$type}"] {
+		background: transparent url('../images/icons/#{$type}.png') no-repeat;
+		@extend %#{$type}-default;
+		@extend %#{$type}-width;
+		@extend %#{$type}-height;
+		cursor: pointer;
+		appearance: none;
+
+		&:focus {
+			outline: 0!important;
+		}
+
+		&:checked,
+		.checked {
+			@extend %#{$type}-checked;
+
+			&:hover {
+				@extend %#{$type}-checked;
+			}
+
+			&:disabled,
+			&.disabled {
+				@extend %#{$type}-disabled-checked;
+			}
+		}
+
+		&:disabled {
+			@extend %#{$type}-disabled;
+		}
+
+		&.form-check-input {
+			position: relative;
+			top: 3px;
+			margin-right: 6px;
+		}
+	}
+}
+
+
+// `select` dropdown style
+// ----
+select {
+	&.form-control {
+		padding: 0 14px;
+		@include vitality-scrollbar-variant;
+		appearance: none;
+
+		&.multiple {
+			padding: 0;
+		}
+
+		option {
+			padding: 10px 0;
+			text-indent: 14px;
+		}
+	}
+}
+
+.selection-wrap {
+	position: relative;
+
+	&:before {
+		line-height: $input-height-base + 8;
+		position: absolute;
+		top: 0;
+		right: 14px;
+		z-index: -1;
+		content: '\f0d7';
+		font-size: 16px;
+		font-family: $font-family-fa;
+		color: $gray-light;
+	}
+
+	select {
+		appearance: none!important;
+		background: transparent;
+		cursor: pointer;
+	}
+}
+
+
+// `textarea` style
+// ----
+textarea {
+	&.form-control {
+		padding: 14px;
+		line-height: $line-height-base;
+		@include vitality-scrollbar-variant;
+	}
+}

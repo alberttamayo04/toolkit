@@ -1,0 +1,70 @@
+/*
+------------------------------------------------------------------
+[Table]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// `.table` base styles
+// ----
+.table {
+	table-layout: fixed;
+	border: none;
+	border-collapse: collapse;
+	width: 100%;
+	
+	thead {
+		tr {
+			th {
+				border: none;
+				border-right: 1px solid darken($table-th-bg, 5%);
+				background-color: $table-th-bg;
+				text-indent: 20px;
+				color: $table-th-color;
+				font-weight: normal;
+			}
+		}
+	}
+	    
+	tr {
+		th,
+		td {
+			padding: $table-cell-padding!important;
+		}
+
+		td {
+			text-indent: 20px!important;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+  		}
+
+		&:hover {
+			background: $gray-lighter
+		}
+
+		&:first-child {
+			td {
+				border-top: none;
+			}
+		}
+	}
+}
+
+
+// `.table-striped` base styles
+// ----
+
+.table-striped {
+	tr {
+		&:hover {
+			background: darken($gray-lighter, 1%)!important;
+		}
+	}
+}

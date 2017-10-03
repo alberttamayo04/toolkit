@@ -1,0 +1,133 @@
+/*
+------------------------------------------------------------------
+[Button]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+.btn {
+	padding: 10px 30px;
+	border-radius: 0!important;
+	font-size: $font-size-base;
+	@include vitality-transition-variant;
+
+	&:focus,
+	&.focus {
+		cursor: pointer;
+		outline: 0!important;
+	}
+
+	&:disabled,
+	&[class*=disabled] {
+		cursor: $cursor-disabled;
+	}
+
+	@media screen and (max-width: $mobile-landscape) {
+		width: 100%;
+	}
+}
+
+
+// alternate buttons
+// ----
+.btn {
+	&-primary {
+		@include vitality-button-variant(
+			$btn-primary-color,
+			$btn-primary-bg,
+			$btn-primary-border
+		);
+
+		&.points-and-status {
+			@include vitality-button-variant(
+				$btn-points-status-color,
+				$btn-points-status-bg,
+				$btn-points-status-border
+			);
+		}
+
+		&.enjoy-your-rewards {
+			@include vitality-button-variant(
+				$btn-enjoy-rewards-color,
+				$btn-enjoy-rewards-bg,
+				$btn-enjoy-rewards-border
+			);
+		}
+
+		&.know-your-health {
+			@include vitality-button-variant(
+				$btn-know-health-color,
+				$btn-know-health-bg,
+				$btn-know-health-border
+			);
+		}
+
+		&.improve-your-health {
+			@include vitality-button-variant(
+				$btn-improve-health-color,
+				$btn-improve-health-bg,
+				$btn-improve-health-border
+			);
+		}
+	}
+
+	&-secondary {
+		@include vitality-button-variant(
+			$btn-secondary-color,
+			$btn-secondary-bg,
+			$btn-secondary-border
+		);
+	}
+
+	&-disabled {
+		@include vitality-button-variant(
+			$btn-disabled-color,
+			$btn-disabled-bg,
+			$btn-disabled-border
+		);
+	}
+}
+
+
+// button sizes
+// ----
+.btn {
+	&-xs {
+		@include vitality-button-size(
+			$padding-xs-vertical,
+			$padding-xs-horizontal,
+			$font-size-small,
+			$line-height-small,
+			$border-radius-small
+		);
+	}
+
+	&-small {
+		@include vitality-button-size(
+			$padding-small-vertical,
+			$padding-small-horizontal,
+			$font-size-small,
+			$line-height-small,
+			$border-radius-small
+		);
+	}
+
+	&-large {
+		@include vitality-button-size(
+			$padding-large-vertical,
+			$padding-large-horizontal,
+			$font-size-base,
+			$line-height-large,
+			$border-radius-large
+		);
+	}
+}
+

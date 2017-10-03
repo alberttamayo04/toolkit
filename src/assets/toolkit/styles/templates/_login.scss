@@ -1,0 +1,77 @@
+/*
+------------------------------------------------------------------
+[Login Page]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+.login {
+	height: 100vh;
+	background: transparent url('../images/background.jpg') center center no-repeat;
+	background-size: cover;
+	border-top: 4px solid $brand-primary;
+	display: flex;
+
+	.login-form {
+		display: block;
+		background-color: rgba(255, 255, 255, 1);
+		@include opacity(0.95);
+		margin: auto;
+		padding: 30px 15px;
+
+		.container {
+			max-width: $tablet-portrait;
+
+			@media screen and (max-width: $mobile-landscape) {
+				max-width: 100%;
+			}
+		}
+
+		p {
+			margin: 15px 0 25px 0;
+		}
+
+		a {
+			color: $brand-primary;
+
+			&.forgot-password {
+				display: block;
+				margin-top: 13px;
+
+				@media screen and (max-width: $mobile-landscape) {
+					margin: 0 0 20px 0;
+				}
+			}
+		}
+
+		h1 {
+			margin-bottom: 0;
+			color: $brand-primary;
+			font-size: $font-size-h3;
+		}
+
+		h1,
+		form {
+			padding:  20px;
+			border: 1px solid darken($gray-lighter, 5%);
+		}
+
+		form {
+			border-top: none;
+
+			input:not([type=submit]) {
+				background: transparent;
+			}
+		}
+
+		
+	}
+}

@@ -1,0 +1,61 @@
+/*
+------------------------------------------------------------------
+[Main Stylesheet]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+
+UI Kit with documentation built on top of Twitter Bootstrap.
+
+Sturcture was designed using atomic design approach.
+-------------------------------------------------------------------
+*/
+
+
+// utilities
+// ----
+@import 'utilities/variables';
+@import 'utilities/mixins';
+@import 'utilities/placeholders';
+
+
+// organisms
+// ----
+@import 'organisms/header';
+@import 'organisms/content';
+@import 'organisms/footer';
+
+
+// molecules
+// ----
+@import 'molecules/form';
+@import 'molecules/menu';
+@import 'molecules/modal';
+@import 'molecules/panel';
+@import 'molecules/question-card';
+
+
+// atoms
+// ----
+@import 'atoms/alert';
+@import 'atoms/breadcrumb';
+@import 'atoms/button';
+@import 'atoms/heading';
+@import 'atoms/input';
+@import 'atoms/label';
+@import 'atoms/list';
+@import 'atoms/pagination';
+@import 'atoms/paragraph';
+@import 'atoms/spinner';
+@import 'atoms/table';
+@import 'atoms/tooltip';
+@import 'atoms/wizard';
+
+
+// templates
+// ----
+@import 'templates/login';
+@import 'templates/register';

@@ -1,0 +1,60 @@
+/*
+------------------------------------------------------------------
+[Modal]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+.modal {
+	&.fade {
+		padding: 0!important;
+	}
+
+	&-dialog {
+		.modal {
+			&-header,
+			&-footer {
+				padding: $modal-inner-padding;
+			}
+		}
+
+		.modal-content {
+			.modal-header {
+				.close {
+					font-size: $font-size-base + 4;
+					margin-top: 4px;
+					color: $gray;
+				}
+			}
+
+			.modal-footer {
+				@media screen and (max-width: $mobile-landscape) {
+					.btn {
+						width: 100%!important;
+						margin: 4px 0!important;
+      
+						&+.btn {
+							margin-left: 0!important;
+						}
+  
+						&:first-of-type {
+							margin: 0 0 4px 0;
+						}
+      
+						&:nth-last-of-type(1) {
+							margin: 4px 0 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

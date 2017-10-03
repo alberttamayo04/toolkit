@@ -1,0 +1,35 @@
+/*
+------------------------------------------------------------------
+[Content]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+body {
+	font-size: $font-size-base;
+	color: $text-color;
+	font-family: $font-family-base;
+	line-height: $line-height-base;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+// alignment
+// ----
+$alignments: left, right, center, justify;
+@each $alignment in $alignments {
+	.align-#{$alignment} {
+		text-align: $alignment
+	}
+}

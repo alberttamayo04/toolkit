@@ -1,0 +1,293 @@
+/*
+------------------------------------------------------------------
+[Reusable Styles]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+/*
+------------------------------------------------------------------
+[Table of contents]
+
+# Alert				@mixin alert-variant
+# Animation			@mixin animation
+# Border Radius		@mixin border-radius
+# Box Shadow		@mixin border-shadow
+# Box Sizing		@mixin border-box
+# Button
+	 Variants		@mixin vitality-button-variant
+	 Sizes			@mixin button-size
+
+# Clearfix			@mixin clearfix
+# Gradient
+	 Horizontal		@mixin gradient-horizontal
+	 Vertical		@mixin gradient-vertical
+	 Directional	@mixin gradient-directional
+	 Radial			@mixin gradient-radial
+
+# Opacity			@mixin opacity
+# Resizable			@mixin resizable
+# Scroolbar			@mixin scrollbar
+# Transform
+	 Rotate			@mixin 
+	 Scale			@mixin 
+	 Skew			@mixin 
+
+# Transition		@mixin transition-variant
+# User Select		@mixin user-select
+
+Note: gulp-autoprefixer npm automatically adds vendor-prefix
+------------------------------------------------------------------
+*/
+
+
+/*
+------------------------------------------------------------------
+# Alert
+------------------------------------------------------------------
+*/
+
+@mixin vitality-alert-variant($text-color, $background, $border) {
+	background-color: $background;
+	border-color: $border;
+	color: $text-color;
+
+	hr {
+		background-color: $border;
+	}
+
+	a {
+		color: darken($text-color, 10%);
+	}
+}
+
+
+/*
+------------------------------------------------------------------
+# Animation
+------------------------------------------------------------------
+*/
+
+@mixin vitality-animation-variant($animation, $duration) {
+	
+}
+
+
+/*
+------------------------------------------------------------------
+# Border Radius
+------------------------------------------------------------------
+*/
+
+@mixin border-radius($radius: $border-radius-base) {
+	border-radius: $radius;
+}
+
+
+/*
+------------------------------------------------------------------
+# Box Shadow
+------------------------------------------------------------------
+*/
+
+@mixin box-shadow($box-shadow: none) {	
+	box-shadow: $box-shadow;
+}
+
+
+/*
+------------------------------------------------------------------
+# Box Sizing
+------------------------------------------------------------------
+*/
+
+@mixin border-box($box-size: border-box) {	
+	box-sizing: $box-size;
+}
+
+
+/*
+------------------------------------------------------------------
+# Button
+------------------------------------------------------------------
+*/
+
+// vitality `.btn` variants(ex. primary, secondary, ...)
+// ----
+@mixin vitality-button-variant($color, $background, $border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+
+	&:focus,
+	&:active
+	&.focus {
+		color: $color;
+		background-color: darken($background, 10%);
+		border-color: darken($border, 15%);
+	}
+
+	&:hover {
+		color: $color;
+		background-color: lighten($background, 5%);
+		border-color: $border;
+	}
+
+	&.disabled,
+	&[disabled] {
+		color: $color;
+		background-color: lighten($background, 30%);
+		border-color: lighten($border, 25%);
+		cursor: $cursor-disabled;
+	}
+}
+
+// vitality `.btn` sizes
+// ----
+@mixin vitality-button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+	padding: $padding-vertical $padding-horizontal;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
+}
+
+
+/*
+------------------------------------------------------------------
+# Clearfix
+------------------------------------------------------------------
+*/
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: ''; 
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+/*
+------------------------------------------------------------------
+# Gradient
+------------------------------------------------------------------
+*/
+
+@mixin vitality-gradient-horizontal($start-color, $end-color, $start-percent: 0%, $end-percent: 100%) {
+	background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); 
+	background-repeat: repeat-x;
+}
+
+@mixin vitality-gradient-vertical($start-color, $end-color, $start-percent: 0%, $end-percent: 100%) {
+	background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0);
+	background-repeat: repeat-x;
+}
+
+@mixin vitality-gradient-directional($start-color, $end-color, $deg: 45deg) {
+	background-image: linear-gradient($deg, $start-color, $end-color);
+	background-repeat: repeat-x;
+}
+
+@mixin gradient-radial($inner-color, $outer-color) {
+	background-image: radial-gradient(circle, $inner-color, $outer-color);
+	background-repeat: no-repeat;
+}
+
+
+/*
+------------------------------------------------------------------
+# Opacity
+------------------------------------------------------------------
+*/
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: ($opacity * 100);
+	filter: alpha(opacity=$opacity-ie);
+}
+
+
+/*
+------------------------------------------------------------------
+# Resizable
+------------------------------------------------------------------
+*/
+
+@mixin resizable($direction: both) {
+	resize: $direction;
+	overflow: auto;
+}
+
+
+/*
+------------------------------------------------------------------
+# Scrollbar
+------------------------------------------------------------------
+*/
+
+@mixin vitality-scrollbar-variant($track-shadow: none, $track-bg:  $gray-lighter, $scrollbar-width: 10px, $scrollbar-bg:  $gray-lighter, $thumb-bg: $gray-light, $thumb-border: none) {
+	&::-webkit-scrollbar-track {
+		-webkit-box-shadow: $track-shadow;
+		background-color: $track-bg;
+	}
+
+	&::-webkit-scrollbar {
+		width: $scrollbar-width;
+		background-color: $scrollbar-bg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: lighten($thumb-bg, 20%);
+		border: $thumb-border;
+	}
+}
+
+
+/*
+------------------------------------------------------------------
+# Transform
+------------------------------------------------------------------
+*/
+
+// vitality `.btn` sizes
+// ----
+@mixin user-select($select) {
+	user-select: $select;
+}
+
+
+/*
+------------------------------------------------------------------
+# Transition
+------------------------------------------------------------------
+*/
+
+@mixin vitality-transition-variant($property: all, $duration: 1s, $timing-function: ease, $delay: 0) {	
+	transition-property: $property;
+	transition-duration: $duration;
+	transition-timing-function: $timing-function;
+	transition-delay: $delay;
+}
+
+
+/*
+------------------------------------------------------------------
+# User Select
+------------------------------------------------------------------
+*/
+
+// for text selection on page
+// ----
+@mixin user-select($select) {
+	user-select: $select;
+}

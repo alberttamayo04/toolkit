@@ -1,0 +1,43 @@
+# Color Group
+colors:
+  modules:
+    c50018: "rgba(197, 0, 24, 1)"
+    e66c77: "rgba(230, 108, 119, 1)"
+    2bca6d: "rgba(43, 202, 109, 1)"
+    17aad6: "rgba(23, 170, 214, 1)"
+  system:
+    d40707: "rgba(212, 7, 7, 1)"
+    0000ee: "rgba(0, 0, 238, 1)"
+    551a8b: "rgba(85, 26, 139, 1)"
+  grey:
+    333333: "rgba(51, 51, 51, 1)"
+    9b9b9b: "rgba(155, 155, 155, 1)"
+    cccccc: "rgba(204, 204, 204, 1)"
+    f2f2f2: "rgba(155, 155, 155, 1)"
+
+# List Data
+list:
+  item1:
+    1: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+    2: "Aliquam tincidunt mauris eu risus."
+    3: "Vestibulum auctor dapibus neque."
+
+# Table Data
+thead:
+  th:
+    name: "First Name"
+    lastname: "Last Name"
+    suername: "Username"
+tbody:
+  td1:
+    name: "Mark"
+    lastname: "Otto"
+    suername: "@mdo"
+  td2:
+    name: "Jacob"
+    lastname: "Thornton"
+    suername: "@fat"
+  td3:
+    name: "Larry"
+    lastname: "Bird"
+    suername: "@twitter"

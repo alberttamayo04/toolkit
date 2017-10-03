@@ -1,0 +1,21 @@
+/*
+------------------------------------------------------------------
+[List]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+ul,
+ol {
+	li {
+		line-height: $line-height-large + .5;
+	}
+}

@@ -1,0 +1,37 @@
+/*
+------------------------------------------------------------------
+[Pagination]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+.pagination {
+	li {
+		@include vitality-transition-variant;
+
+		a {
+			color: $gray-light!important;
+		}
+
+		&:hover,
+		&.active {
+			a {
+				background-color: $component-active-bg;
+				border-color: $component-active-bg;
+				color: $component-active-color!important;
+			}
+		}
+
+		&.disabled {
+			ursor: $cursor-disabled;
+		}
+	}
+} 

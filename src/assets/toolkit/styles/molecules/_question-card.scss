@@ -1,0 +1,97 @@
+/*
+------------------------------------------------------------------
+[Question Card]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+.question-card {
+	.question {
+		&-name {
+			font-size: $font-size-base + 2!important;
+			font-weight: 600;
+			padding: 2px 0 12px 0;
+		}
+
+		&-box {
+			padding: 20px 24px;
+			@include box-shadow(0 0 1px $gray-light);
+			@include border-radius($border-radius-base);
+
+			& >.form-group {
+				margin-bottom: 0;
+			}
+
+			.main-question {
+				label {
+					font-size: $font-size-base!important;
+					font-weight: 600;
+				}
+
+				.form-group {
+					margin-bottom: 0;
+				}
+			}
+
+			.child-questions {
+				.question {
+					border-bottom: 1px solid $gray-lighter;
+					margin: 18px 24px;
+					padding-bottom: 12px;
+
+					h4 {
+						font-size: $font-size-base;
+					}
+
+					&:nth-last-of-type(1) {
+						border-bottom: none;
+						padding-bottom: 0;
+
+						.form-group {
+							margin-left: -15px;
+						} 
+					}
+
+					&:first-of-type(1) {
+						margin: 0 18px 0 24p;
+					}
+
+					.note {
+						clear: left;
+						padding: 6px 15px;
+						color: $gray-light;
+					}
+				}
+
+			}
+		}
+	}  
+}
+
+
+// independent question card
+// ----
+.independent {
+	background: $gray-lighter;
+
+	.question {
+		&-name {
+			font-size: $font-size-base!important;
+		}
+
+		&-box {
+			@include box-shadow(0);
+		}
+	}
+}
+
+
+

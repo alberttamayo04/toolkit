@@ -1,0 +1,64 @@
+/*
+------------------------------------------------------------------
+[Alert]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+.alert {
+	padding: ($padding-large-vertical * 1.5) ($padding-large-horizontal * 1.5);
+
+	&-success {
+		@include vitality-alert-variant(
+			$alert-success-color,
+			$alert-success-bg,
+			$alert-success-border
+		);
+	}
+
+	&-info {
+		@include vitality-alert-variant(
+			$alert-info-color,
+			$alert-info-bg,
+			$alert-info-border
+		);
+	}
+
+	&-danger {
+		@include vitality-alert-variant(
+			$alert-danger-color,
+			$alert-danger-bg,
+			$alert-danger-border
+		);
+	}
+
+	&-warning {
+		@include vitality-alert-variant(
+			$alert-warning-color,
+			$alert-warning-bg,
+			$alert-warning-border
+		);
+	}
+
+	a {
+		font-weight: 600;
+	}
+}
+
+
+// dismissible alerts
+// ----
+.alert-dismissible {
+	.close {
+		top: 0;
+		right: -7px;
+	}
+}

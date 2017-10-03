@@ -1,0 +1,462 @@
+/*
+------------------------------------------------------------------
+[Variables]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+/*
+------------------------------------------------------------------
+[Table of contents]
+
+# Screens
+# Colors
+# Scaffolding
+# Typography
+# Components
+# Tables
+# Buttons
+# Input
+# Spinner
+# Modal
+# Alerts
+# Wizard
+------------------------------------------------------------------
+*/
+
+/*
+------------------------------------------------------------------
+#	Screen Sizes
+------------------------------------------------------------------
+*/
+
+// `points and status` module colors
+// ----
+$mobile-portrait:				320px !default;
+$mobile-landscape:				480px !default;
+
+// `points and status` module colors
+// ----
+$tablet-portrait:				768px !default
+$tablet-landscape:				1024px !default
+
+// `points and status` module colors
+// ----
+$desktop:						$tablet-landscape!default
+
+
+/*
+------------------------------------------------------------------
+#	Colors
+------------------------------------------------------------------
+*/
+
+// `points and status` module colors
+// ----
+$points-status-base:			#c50018 !default;
+$points-status-dark:			darken($points-status-base, 20%) !default;
+$points-status:					$points-status-base !default;
+$points-status-light:			lighten($points-status-base, 20%) !default;
+
+// `enjoy your rewards` module colors
+// ----
+$enjoy-rewards-base:			#e66c77 !default;
+$enjoy-rewards-dark:			darken($enjoy-rewards-base, 20%) !default;
+$enjoy-rewards:					$enjoy-rewards-base !default;
+$enjoy-rewards-light:			lighten($enjoy-rewards-base, 20%) !default;
+
+// `know your health` module colors
+// ----
+$know-health-base:				#2bca6d !default;
+$know-health-dark:				darken($know-health-base, 20%) !default;
+$know-health:					$know-health-base !default;
+$know-health-light:				lighten($know-health-base, 20%) !default;
+
+// `improve your health` module colors
+// ----
+$improve-health-base:			#17aad6 !default;
+$improve-health-dark:			darken($improve-health-base, 20%) !default;
+$improve-health:				$improve-health-base !default;
+$improve-health-light:			lighten($improve-health-base, 20%) !default;
+
+// application gray variations
+// ----
+$gray-base:						#000000 !default;
+$gray-darker:					lighten($gray-base, 13.5%) !default; 
+$gray-dark:						lighten($gray-base, 20%) !default;   
+$gray:							lighten($gray-base, 33.5%) !default; 
+$gray-light:					lighten($gray-base, 46.7%) !default; 
+$gray-lighter:					lighten($gray-base, 93.5%) !default;
+
+// application brand colors.
+// ----
+$brand-primary:					$points-status !default;
+$brand-error:					#d40707	!default;
+$brand-auxiliary:				rgba($gray-light, 0.2) !default;
+
+
+/*
+------------------------------------------------------------------
+# Scaffolding
+------------------------------------------------------------------
+*/
+
+// `<body>` background color
+// ----
+$body-bg:						#ffffff !default;
+
+// global text color on `<body>`
+// ----
+$text-color:					$gray-dark !default;
+
+// global textual link color
+// ----
+$link-color:					#0000ee !default;
+$link-hover-color:				#551a8b !default;
+$link-hover-decoration:			underline !default;
+
+
+/*
+------------------------------------------------------------------
+# Typography
+------------------------------------------------------------------
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+// font families from `https://fonts.google.com/`
+// ----
+$font-family-source-sans:		'Source Sans Pro', sans-serif;
+$font-family-open-sans:			'Open Sans', sans-serif;
+$font-family-fa:				'FontAwesome';
+$font-family-monsterrat:		'Montserrat', sans-serif;
+$font-family-base:				$font-family-open-sans !default;
+
+// global textual sizes
+// ----
+$font-size-base:				13px !default;
+$font-size-large:				ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:				ceil(($font-size-base * 0.85)) !default; // ~12px
+
+// global textual headings sizes
+// ----
+$font-size-h1:					floor(($font-size-base * 2.2)) !default; // ~ 28px
+$font-size-h2:					floor(($font-size-base * 1.7)) !default; // ~ 22px
+$font-size-h3:					floor(($font-size-base * 1.6)) !default; // ~
+$font-size-h4:					floor(($font-size-base * 1.5)) !default; // ~
+$font-size-h5:					floor(($font-size-base * 1.35)) !default; // ~
+
+// unit-less `line-height` for use in components like buttons
+// ----
+$line-height-base:				1.428571429 !default; 
+$line-height-computed:			floor(($font-size-base * $line-height-base)) !default; // ~18px
+
+
+/*
+------------------------------------------------------------------
+# Components
+------------------------------------------------------------------
+*/
+
+// default padding used accross vitality application
+// ----
+$padding-base-vertical:			6px !default;
+$padding-base-horizontal:		12px !default;
+
+// large padding(e.g. `.btn-lg` or `.form-control.input-lg`)
+// ----
+$padding-large-vertical:		10px !default;
+$padding-large-horizontal:		16px !default;
+
+// small padding(e.g. `.btn-sm` or `.form-control.input-sm`)
+// ----
+$padding-small-vertical:		5px !default;
+$padding-small-horizontal:		10px !default;
+
+// extra-small padding(e.g. `.btn-xs` or `.form-control.input-xs`) 
+// ----
+$padding-xs-vertical:			1px !default;
+$padding-xs-horizontal:			5px !default;
+
+$line-height-small:				1.3333333 !default;
+$line-height-large:				1.5 !default;
+
+// common border-radius sizes
+// ----
+$border-radius-base:			4px !default;
+$border-radius-large:			6px !default;
+$border-radius-small:			3px !default;
+
+// vitality active component styles(e.g., navs or dropdowns)
+// ----
+$component-active-color:		#ffffff !default;
+$component-active-bg:			$brand-primary !default;
+
+
+/*
+------------------------------------------------------------------
+# Tables
+------------------------------------------------------------------
+*/
+
+// padding for `<th>` and `<td>`
+// ----
+$table-cell-padding:			10px !default;
+
+// `.table` background color
+// ----
+$table-bg:						transparent !default;
+
+// `.table <th>` styles
+// ----
+$table-th-bg:					$brand-primary !default;
+$table-th-color:				#ffffff;
+
+// `.table` border color.
+// ----
+$table-border-color:			$gray-light !default;
+
+// `.table-striped` background color
+// ----
+$table-bg-accent:				$gray-lighter !default;
+
+
+/*
+------------------------------------------------------------------
+# Buttons
+------------------------------------------------------------------
+*/
+
+// `.btn` font styles
+// ----
+$btn-font-weight:				600 !default;
+
+// `points and status` module button styles
+// ----
+$btn-points-status-color:		#ffffff !default;
+$btn-points-status-bg:			$points-status !default;
+$btn-points-status-border:		$points-status !default;
+
+// `enjoy rewards` module button styles
+// ----
+$btn-enjoy-rewards-color:		#ffffff !default;
+$btn-enjoy-rewards-bg:			$enjoy-rewards !default;
+$btn-enjoy-rewards-border:		$enjoy-rewards !default;
+
+// `know your health` module button styles
+// ----
+$btn-know-health-color:			#ffffff !default;
+$btn-know-health-bg:			$know-health !default;
+$btn-know-health-border:		$know-health !default;
+
+// `improve your health` module button styles
+// ----
+$btn-improve-health-color:		#ffffff !default;
+$btn-improve-health-bg:			$improve-health !default;
+$btn-improve-health-border:		$improve-health !default;
+
+// `.btn-primary` styles
+// ----
+$btn-primary-color:				#ffffff !default
+$btn-primary-bg:				$brand-primary !default
+$btn-primary-border:			darken($brand-primary, 5%) !default
+
+// `.btn-secondary` styles
+// ----
+$btn-secondary-color:			$brand-primary !default;
+$btn-secondary-bg:				#ffffff !default;
+$btn-secondary-border:			$brand-primary !default;
+
+// `.btn-disabled` styles
+// ----
+$btn-disabled-color:			$gray-light !default;
+$btn-disabled-bg:				#ffffff !default;
+$btn-disabled-border:			$gray-lighter !default;
+
+// `.btn-link:disabled` styles
+// ----
+$btn-link-disabled-color:		$gray-light !default;
+
+
+/*
+------------------------------------------------------------------
+# Input
+------------------------------------------------------------------
+*/
+
+// `.form-control` textual color
+// ----
+$input-color:					$gray !default;
+$input-color-placeholder:		$gray-light !default;
+
+// `.form-control` background color
+// ----
+$input-bg:						#ffffff !default;
+$input-bg-disabled:				$gray-lighter !default;
+
+// `.form-control` border
+// ----
+$input-border:					#d8d8d8 !default;
+$input-border-focus:			$brand-primary !default;
+
+// `input[type=checkbox]` dimensions
+// ----
+$checkbox-width:				18px !default;
+$checkbox-height:				18px !default;
+
+// `input[type=radio]` dimensions
+// ----
+$radio-btn-width:				18px !default;
+$radio-btn-height:				18px !default;
+
+// `.form-control` height
+// ----
+$input-height-base:				($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+$input-height-large:			(ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+$input-height-small:			(floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
+
+// disabled cursor for form controls and buttons.
+// ----
+$cursor-disabled:				not-allowed !default;
+
+// `.input-group-addon` styles
+// ----
+$input-addon-color:				$gray-dark !default;
+$input-addon-bg:				$gray-light !default;
+
+// `.input-group-addon` on:focus `.form-control` styles
+// ----
+$input-addon-active-color:		$component-active-color !default;
+$input-addon-active-bg:			$component-active-bg !default;
+
+
+/*
+------------------------------------------------------------------
+# Spinner
+------------------------------------------------------------------
+*/
+
+// `.articulated-spinner` padding size
+// ----
+$spinner-inner-padding:			18px !default;
+
+// `.articulated-spinner` border radius
+// ----
+$spinner-border-radius:			$border-radius-large !default;
+
+// `.spinner` background color
+// ----
+$spinner-bg:					#ffffff !default;
+
+// `.spinner` dimensions
+// ----
+$spinner-width:					120px !default;
+$spinner-height:				120px !default;
+
+// `.articulated-spinner` width
+// ----
+$articulated-spinner-width:		300px !default;
+
+/*
+------------------------------------------------------------------
+# Modal
+------------------------------------------------------------------
+*/
+
+// `.modal` padding size
+// ----
+$modal-inner-padding:         15px !default;
+
+// `.modal` backdrop styles
+// ----
+$modal-backdrop-bg:           #000 !default;
+$modal-backdrop-opacity:      .5 !default;
+
+// `.modal-content` styless
+// ----
+$modal-content-bg:            #ffffff !default;
+$modal-content-border-color:  rgba(0,0,0,.2) !default;
+
+// `.modal-header` styles
+// ----
+$modal-header-border-color:   $gray-light !default;
+
+// `.modal-footer` border-color
+// ----
+$modal-footer-border-color:   $modal-header-border-color !default;
+
+
+/*
+------------------------------------------------------------------
+# Alerts
+------------------------------------------------------------------
+*/
+
+// `.alert` padding size
+// ----
+$alert-padding:					15px !default;
+
+// `.alert` border radius
+// ----
+$alert-border-radius:			$border-radius-base !default;
+
+// `.alert-success` styles
+// ----
+$alert-success-color:			#155724 !default;
+$alert-success-bg:				#d4edda !default;
+$alert-success-border:			#c3e6cb !default;
+
+// `.alert-info` styles
+// ----
+$alert-info-color:				#0c5460 !default;
+$alert-info-bg:					#d1ecf1 !default;
+$alert-info-border:				#bee5eb !default;
+
+// `.alert-warning` styles
+// ----
+$alert-warning-color:			#856404 !default;
+$alert-warning-bg:				#fff3cd !default;
+$alert-warning-border:			#ffeeba !default;
+
+// `.alert-danger` styles
+// ----
+$alert-danger-color:			#721c24 !default;
+$alert-danger-bg:				#f8d7da !default;
+$alert-danger-border:			#f5c6cb !default;
+
+
+/*
+------------------------------------------------------------------
+# Wizard
+------------------------------------------------------------------
+*/
+
+// `.wizard` padding size
+// ----
+$wizard-padding:				10px !default;
+
+// `.wizard-item` default styles
+// ----
+$wizard-item-color:				$gray-dark !default;
+$wizard-item-bg:				$gray-lighter !default;
+
+// `.wizard-item` pointer size
+// ----
+$wizard-item-pointer:			36px !default;
+
+// `.wizard-item` active state
+// ----
+$wizard-active-item-color:		#ffffff !default;
+$wizard-active-item-bg:			$component-active-bg !default;
+
+// `.wizard-item` completed state
+// ----
+$wizard-done-item-color:		#ffffff !default;
+$wizard-done-item-bg:			lighten($component-active-bg, 10%) !default;

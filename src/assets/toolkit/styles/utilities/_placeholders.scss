@@ -1,0 +1,112 @@
+/*
+------------------------------------------------------------------
+[Placeholders]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+/*
+------------------------------------------------------------------
+[Table of contents]
+
+# Headings
+# Radio
+# Checkbox
+# Scroll Bar
+
+------------------------------------------------------------------
+*/
+
+
+/*
+------------------------------------------------------------------
+# Headings
+------------------------------------------------------------------
+*/
+
+%h1 {
+	font-size: $font-size-h1;
+}
+
+%h2 {
+	font-size: $font-size-h2;
+}
+
+%h3 {
+	font-size: $font-size-h3;
+}
+
+%h4 {
+	font-size: $font-size-h4;
+}
+
+%h5 {
+	font-size: $font-size-h5;
+}
+
+
+/*
+------------------------------------------------------------------
+# Radio
+------------------------------------------------------------------
+*/
+
+%radio-width {
+    width: $radio-btn-width;
+}
+
+%radio-height {
+    height: $radio-btn-height;
+}
+
+%radio-default {
+    background-position: (-$radio-btn-width) 0!important;
+}
+
+%radio-checked {
+    background-position: 0 0!important;
+}
+
+%radio-disabled {
+    background-position: ((-$radio-btn-width) * 2) 0!important;
+}
+
+%radio-disabled-checked {
+    background-position: ((-$radio-btn-width) * 3) 0!important;
+}
+
+
+/*
+------------------------------------------------------------------
+# Checkbox
+------------------------------------------------------------------
+*/
+
+%checkbox-width {
+    width: $checkbox-width;
+}
+
+%checkbox-height {
+    height: $checkbox-height;
+}
+
+%checkbox-default {
+    background-position: (-$checkbox-width) 0!important;
+}
+
+%checkbox-checked {
+    background-position: 0 0!important;
+}
+
+%checkbox-disabled {
+    background-position: ((-$checkbox-width) * 2) 0!important;
+}
+
+%checkbox-disabled-checked {
+    background-position: ((-$checkbox-width) * 3) 0!important;
+}

@@ -1,0 +1,48 @@
+---
+title: Overview | Fabricator
+fabricator: true
+---
+
+<div class="overview">
+
+	<h1>Overview</h1>
+	<p>This guide contains real working examples, code snippets, documentation, and style guidelines.</p>
+
+	<!--usage-->
+		<div id="usage" class="section">
+			<h2>Usage</h2>
+			<p>Start by adding the following files to your page:</p>
+			<pre class="language-markup"><code class="language-markup">&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/toolkit/styles/toolkit.css&quot;&gt;</code></pre>
+			<pre class="language-markup"><code class="language-markup">&lt;script src=&quot;assets/toolkit/scripts/toolkit.js&quot;&gt;&lt;/script&gt;</code></pre>
+		</div>
+	<!--/usage-->
+
+	<!--colors-->
+		<div id="colors" class="section">
+			<h2>Color</h2>
+			{{#each toolkit.colors}}
+				<div class="f-color-chips">
+				{{#each this}}
+					<div class="f-color-chip">
+						<div class="f-color-chip__name">#{{@key}}</div>
+						<div class="f-color-chip__color">{{this}}</div>
+					</div>
+				{{/each}}
+				</div>
+			{{/each}}
+		</div>
+	<!--/colors-->
+
+	<!--usage-->
+		<div id="typography" class="section">
+			<h2>Typography</h2>
+			{{> paragraph}}
+			<h1>Sphinx of black quartz, judge my vow</h1>
+			<h2>Sphinx of black quartz, judge my vow</h2>
+			<h3>Sphinx of black quartz, judge my vow</h3>
+			<h4>Sphinx of black quartz, judge my vow</h4>
+			<h5>Sphinx of black quartz, judge my vow</h5>
+		</div>
+	<!--/colors-->
+</div>
+

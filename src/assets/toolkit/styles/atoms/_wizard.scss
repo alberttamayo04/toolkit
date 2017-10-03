@@ -1,0 +1,87 @@
+/*
+------------------------------------------------------------------
+[Wizard]
+
+Application:	Vitality
+Version:		1.0.0
+Date Modified:  09/27/2017
+Author URI:		http://github.com/alberttamayo04
+Author:			Mark Tamayo
+------------------------------------------------------------------
+*/
+
+
+// base styles
+// ----
+.wizard {
+	padding-left: 0!important;
+	margin-bottom: 0!important;
+
+	li {
+		$pointer: $wizard-item-pointer / 2;
+		position: relative;
+		display: inline-block;
+		margin: 0 (-($pointer) + 8) 10px 0;
+		padding-right: $pointer;
+
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}) {
+				z-index: 100 - $i;
+			}
+		}
+
+		&:before,
+		&:after {
+			display: block;
+			position: absolute;
+			content: '';
+			top: 0;
+			width: 0; 
+			height: 0; 
+			border-top: $pointer solid transparent;
+			border-bottom: $pointer solid transparent;
+			border-left: $pointer solid $gray-lighter;
+		}
+
+		&:before {
+			border-left-color: #ffffff;
+			left: 0;
+		}
+
+		span {
+			color: $wizard-item-color;
+			height: $wizard-item-pointer;
+			line-height: $wizard-item-pointer;
+			padding: 0 10px 0 $wizard-item-pointer;
+			background: $wizard-item-bg;
+			display: block;
+		}
+
+		&:after {
+			border-left-color: $gray-lighter;
+			right: 0;
+		}
+
+		&.active {
+			span {
+				background: $wizard-active-item-bg;
+				color: $wizard-active-item-color;
+			}
+
+			&:after {
+				border-left-color: $wizard-active-item-bg;
+			}
+		}
+
+		&.done {
+			span {
+				background: $wizard-done-item-bg;
+				color: $wizard-done-item-color;
+			}
+
+			&:after {
+				border-left-color: $wizard-done-item-bg;
+			}
+		}
+	}
+}
