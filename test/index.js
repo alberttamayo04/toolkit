@@ -47,6 +47,29 @@ describe('node application server', () => {
 	});
 });
 
+// check /dist folder
+describe('/dist folder', () => {
+	it('should be a directory', () => {
+		assert.isDirectory(dist);
+	});
+
+	it('should not be empty', () => {
+		assert.notIsEmptyDirectory(dist);
+	});
+
+	it('should contain the main stylesheet', () => {
+		assert.directoryIncludeFiles(dist + '/assets/toolkit/styles', ['toolkit.css']);
+	});
+
+	it('should contain bootstrap vendor files', () => {
+		expect(dist + '/vendor/bootstrap').with.deep.subDirs(['css', 'fonts', 'js']);
+	});
+
+	it('should contain minified jquery file', () => {
+		assert.directoryIncludeFiles(dist + '/vendor/jquery', ['jquery.min.js']);
+	});
+});
+
 // check /dist/index.html
 describe('index.html', () => {
 	it('should be a file', () => {
@@ -68,28 +91,5 @@ describe('index.html', () => {
 
 	it('should have a reference to jquery', () => {
 		expect(index).with.contents.that.match(/jquery.min.js/);
-	});
-});
-
-// check /dist folder
-describe('/dist folder', () => {
-	it('should be a directory', () => {
-		assert.isDirectory(dist);
-	});
-
-	it('should not be empty', () => {
-		assert.notIsEmptyDirectory(dist);
-	});
-
-	it('should contain the main stylesheet', () => {
-		assert.directoryIncludeFiles(dist + '/assets/toolkit/styles', ['toolkit.css']);
-	});
-
-	it('should contain bootstrap vendor files', () => {
-		expect(dist + '/vendor/bootstrap').with.deep.subDirs(['css', 'fonts', 'js']);
-	});
-
-	it('should contain minified jquery file', () => {
-		assert.directoryIncludeFiles(dist + '/vendor/jquery', ['jquery.min.js']);
 	});
 });
